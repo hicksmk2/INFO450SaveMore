@@ -147,11 +147,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="BankAccount.h" />
+    <ClInclude Include="CD.h" />
+    <ClInclude Include="CheckingAccount.h" />
+    <ClInclude Include="SavingsAccount.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BankAccount.cpp" />
+    <ClCompile Include="CD.cpp" />
+    <ClCompile Include="CheckingAccount.cpp" />
     <ClCompile Include="INFO450SaveMore.cpp" />
+    <ClCompile Include="SavingsAccount.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
