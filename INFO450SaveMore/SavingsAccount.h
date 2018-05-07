@@ -5,16 +5,19 @@
 class SavingsAccount :public BankAccount
 {
 private:
-	//declare constants for apr and fees
-	const double FIRSTAPR = 0.01;
-	const double SECONDAPR = 0.02;
+	//Declare constants for APR and withdraw fee
+	const double ONEPERCENTAPR = 0.01;
+	const double TWOPERCENTAPR = 0.02;
 	const double WITHDRAWFEE = 2.00;
+
 public:
-	//constructor for Savings
+	//Constructor for the Savings class
 	SavingsAccount(int acctNumber, double acctBalance);
-	//override withdraw function because of withdraw fees
+
+	//Overrides the withdraw function due to withdraw fees
 	int withdrawFunds(double withdrawAmount);
-	// Override deposit to assess interest
+
+	//Overrides deposit to assess interest
 	int depositFunds(double depositAmount);
 	void assessInterest();
 

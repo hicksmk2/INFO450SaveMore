@@ -11,16 +11,22 @@ protected:
 	int accountNumber;
 	double interestRate;
 	double accountBalance;
+	char accountDate;
+
 public:
-	//constructor for Bank Account
+	//Constructor for Bank Account
 	BankAccount(int acctNumber, double acctBalance);
-	// virtual function because some accounts require redefining
+
+	//Virtual function because some accounts require redefining
 	virtual int withdrawFunds(double withdrawAmount);
 	virtual int depositFunds(double depositAmount);
-	//virtual function needed by checking account
+
+	//Virtual function needed by checking account
 	virtual int orderChecks();
-	//function needed by savings and certificate
+
+	//Function needed by savings and certificate classes
 	virtual void assessInterest();
+
 	void displayAccountInfo();
 
 };

@@ -1,13 +1,12 @@
 #include "stdafx.h"
 #include "CheckingAccount.h"
 
-CheckingAccount::CheckingAccount(int acctNumber, double acctBalance) :BankAccount(acctNumber, acctBalance)
+CheckingAccount::CheckingAccount(int acctNumber, double acctBalance) : BankAccount(acctNumber, acctBalance)
 {
-	//no interest rate for checking accounts
-	interestRate = 0;
+	interestRate = 0;											//There is no interest rate for Checking accounts
 }
 
-//function checks if withdrawal is possible and for low balance
+//Function checks if withdrawal is possible and for low balance
 int CheckingAccount::withdrawFunds(double withdrawAmount)
 {
 	if ((accountBalance - withdrawAmount) < 0)
@@ -17,10 +16,11 @@ int CheckingAccount::withdrawFunds(double withdrawAmount)
 	else if ((accountBalance - withdrawAmount) > 0)
 	{
 		accountBalance -= withdrawAmount;
-		//asses if low balance fee needed
+
+		//Checks to see if the low balance fee is necessary 
 		if (accountBalance < 500)
 		{
-			accountBalance -= LOWBALANCEFEE;
+			accountBalance -= LOWBALANCE;
 		}
 		return 0;
 
@@ -29,17 +29,18 @@ int CheckingAccount::withdrawFunds(double withdrawAmount)
 
 int CheckingAccount::orderChecks()
 {
-	if (accountBalance > ORDERCHECKFEE)
+	if (accountBalance > CHECKFEE)
 	{
-		accountBalance -= ORDERCHECKFEE;
-		//assess if low balance fee needed
+		accountBalance -= CHECKFEE;
+
+		//Checks to see if low balance fee needed when applying checks
 		if (accountBalance < 500)
 		{
-			accountBalance -= LOWBALANCEFEE;
+			accountBalance -= LOWBALANCE;
 		}
 		return 0;
 	}
-	else if (accountBalance < ORDERCHECKFEE)
+	else if (accountBalance < CHECKFEE)
 	{
 		return -1;
 	}

@@ -2,11 +2,11 @@
 #include "CD.h"
 
 
-CD::CD(int acctNumber, double acctBalance, int term) :BankAccount(acctNumber, acctBalance)
+CD::CD(int acctNumber, double acctBalance, int term) : BankAccount(acctNumber, acctBalance)
 {
 	if (term < 5)
 	{
-		interestRate = LESSERRATE;
+		interestRate = LESSTHANRATE;
 	}
 	else if (term > 4)
 	{
@@ -17,6 +17,6 @@ CD::CD(int acctNumber, double acctBalance, int term) :BankAccount(acctNumber, ac
 
 void CD::assessInterest()
 {
-	//calculates monthly interest
+	//Calculates interest on a monthly basis
 	accountBalance += (accountBalance*(interestRate) / 12);
 }

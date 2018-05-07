@@ -7,13 +7,14 @@ class CheckingAccount : public BankAccount
 {
 private:
 	//declare constants for fees and low balance
-	const double LOWBALANCEFEE = 5.00;
-	const double ORDERCHECKFEE = 15.00;
+	const double LOWBALANCE = 5.00;
+	const double CHECKFEE = 15.00;
+
 public:
 	CheckingAccount(int acctNumber, double acctBalance);
-	//override withdraw function to check balance and apply fee
+	//Overrides the withdraw function, Checks the current balance, and applies necessary fees
 	int withdrawFunds(double withdrawAmount);
-	//function will be used to order checks
+
+	//Function will be used to order checks
 	int orderChecks();
-	//this function will be used to check whether a balance is low
 };

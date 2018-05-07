@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "SavingsAccount.h"
 
-SavingsAccount::SavingsAccount(int acctNumber, double acctBalance) :BankAccount(acctNumber, acctBalance)
+SavingsAccount::SavingsAccount(int acctNumber, double acctBalance) : BankAccount(acctNumber, acctBalance)
 {
 	//asses the interest rate of beginning balance
 	assessInterest();
@@ -42,11 +42,11 @@ void SavingsAccount::assessInterest()
 {
 	if (accountBalance <= 10000)
 	{
-		interestRate = FIRSTAPR;
+		interestRate = ONEPERCENTAPR;
 	}
 	else if (accountBalance >= 10000)
 	{
-		interestRate = SECONDAPR;
+		interestRate = TWOPERCENTAPR;
 	}
 
 	//calculate compunded interest
